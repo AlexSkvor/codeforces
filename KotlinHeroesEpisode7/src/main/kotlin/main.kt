@@ -16,7 +16,18 @@ private fun taskName() {
 
     val ans = StringBuilder()
     repeat(tasksNumber) { taskNumber ->
-
+        val (friendsNumber, startDay) = readInts()
+        var max = 0
+        repeat(friendsNumber) { friendNumber ->
+            val (fromDay, toDay) = readInts()
+            if (startDay in fromDay..toDay) {
+                val interval = toDay - startDay + 1
+                if (interval > max) {
+                    max = interval
+                }
+            }
+        }
+        ans.append("$max\n")
     }
     print(ans)
 }
