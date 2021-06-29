@@ -16,7 +16,18 @@ private fun taskName() {
 
     val ans = StringBuilder()
     repeat(tasksNumber) { taskNumber ->
-
+        readInt()
+        var yes = false
+        val x = readInts()
+        for (i in x.indices) {
+            if (i > 0) {
+                if ((x[i] - x[i - 1]) and 1 == 0) {
+                    yes = true
+                    continue
+                }
+            }
+        }
+        if (yes) ans.append("YES\n") else ans.append("NO\n")
     }
     print(ans)
 }
