@@ -8,15 +8,23 @@ private fun readLongs() = readStrings().map { it.toLong() } // list of longs
 
 
 fun main(args: Array<String>) {
-    taskName()
+    uniformString()
 }
 
-private fun taskName() {
+private fun uniformString() {
     val tasksNumber = readInt()
 
-    val ans = StringBuilder()
+    val sbAns = StringBuilder()
     for (i in 0 until tasksNumber) {
-
+        val (length, lettersNumber) = readInts()
+        val biggestLetterChar = ('a' + (lettersNumber - 1))
+        var nextLetter = biggestLetterChar
+        repeat(length) {
+            sbAns.append(nextLetter)
+            nextLetter = if (nextLetter > 'a') nextLetter - 1
+            else biggestLetterChar
+        }
+        sbAns.append('\n')
     }
-    print(ans)
+    print(sbAns)
 }
