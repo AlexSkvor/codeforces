@@ -15,7 +15,7 @@ private fun taskName() {
     val tasksNumber = readInt()
 
     val ans = StringBuilder()
-    for (i in 0 until tasksNumber) {
+    repeat(tasksNumber) { taskNumber ->
 
     }
     print(ans)
